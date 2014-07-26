@@ -21,7 +21,7 @@ npm start
 /Fall%202014/crns/69675,68634.xml?only_available=yes
 ```
 
-### Examlpe Output
+### Example Output
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
