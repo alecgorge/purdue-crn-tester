@@ -40,8 +40,8 @@ app.get "/:semester/crns/:crns.xml", (req, res) ->
 
 	purdue_api.seating_details sem, crns, (err, resps) ->
 		for cls in resps
-			if only_available and cls.seats.available is 0
-				continue
+			# if only_available and cls.seats.available is 0
+				# continue
 
 			feed.item cls.rss()
 
