@@ -16,6 +16,7 @@ class PurdueAPIResponse
 	rss: () ->
 		are_seats_available = if @seats.available > 0 then " - SEATS AVAILABLE" else ""
 		bool_are_seats_available = if @seats.available > 0 then "YES" else "NO"
+		seats_available_tag = if @seats.available > 0 then "SEATS_AVAILABLE_TAG" else ""
 		return {
 			title: "#{@crn} — #{@class_identifier}#{are_seats_available} - #{@class_name}"
 			description: """<p>Seats available: <strong><large>#{bool_are_seats_available}</large></strong></p>
@@ -26,6 +27,8 @@ class PurdueAPIResponse
 			<li>Occupied: #{@seats.occupied}</li>
 			<li>available: #{@seats.available}</li>
 			</ul>
+
+			<p style="display:none">#{seats_available_tag}</p>
 			""",
 			url: PurdueAPIResponse.details_url @term, @crn
 			guid: @term + "-" + @crn + "-" + Date.now()
