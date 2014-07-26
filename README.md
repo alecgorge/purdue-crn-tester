@@ -2,6 +2,10 @@
 
 RSS feeds to let you know if seats are available in classes at Purdue.
 
+I currently host a public instance at [http://purdue-crn-tester.app.alecgorge.com/](http://purdue-crn-tester.app.alecgorge.com/).
+
+Look below to see how to use this service.
+
 ## Usage
 
 ```
@@ -18,7 +22,7 @@ npm start
 ### Example
 
 ```
-/Fall%202014/crns/69675,68634.xml?only_available=yes
+http://purdue-crn-tester.app.alecgorge.com/Fall%202014/crns/69675,68634.xml?only_available=yes
 ```
 
 ### Example Output
