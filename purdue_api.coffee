@@ -25,7 +25,7 @@ class PurdueAPIResponse
 			<ul>
 			<li>Max: #{@seats.max}</li>
 			<li>Occupied: #{@seats.occupied}</li>
-			<li>available: #{@seats.available}</li>
+			<li>Available: #{@seats.available}</li>
 			</ul>
 
 			<p style="display:none">#{seats_available_tag}</p>

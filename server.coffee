@@ -27,6 +27,9 @@ app.get "/:semester/crns/:crns.xml", (req, res) ->
 	crns = req.param('crns').trim().split(',').map((v) -> v.trim())
 	sem  = req.param 'semester'
 
+	only_available = req.param 'only_available'
+	only_available = ['no', '0', 'false'].indexOf(only_available) is -1
+
 	res.header 'Content-Type', 'application/rss+xml'
 
 	if crns.length is 0
@@ -37,6 +40,9 @@ app.get "/:semester/crns/:crns.xml", (req, res) ->
 
 	purdue_api.seating_details sem, crns, (err, resps) ->
 		for cls in resps
+			if only_available and cls.seats.available is 0
+				continue
+
 			feed.item cls.rss()
 
 		res.send feed.xml '\t'
